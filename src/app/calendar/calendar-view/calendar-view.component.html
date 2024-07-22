@@ -1,0 +1,19 @@
+<app-appointment-form (addAppointment)="addAppointment($event)"></app-appointment-form>
+<div class="calendar-container">
+    <div class="calendar-header">
+        <button mat-button (click)="previousMonth()">Previous</button>
+        <span>{{ currentDate | date: 'MMMM yyyy' }}</span>
+        <button mat-button (click)="nextMonth()">Next</button>
+    </div>
+    <div class="calendar">
+        <div class="day" *ngFor="let day of days">
+            <div class="date">{{ day.date | date: 'd' }}</div>
+            <div cdkDropList (cdkDropListDropped)="drop($event, day.date)">
+                <div class="appointment" *ngFor="let appointment of day.appointments" cdkDrag>
+                    {{ appointment.title }} - {{ appointment.time }}
+                    <button (click)="deleteAppointment(day, appointment)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

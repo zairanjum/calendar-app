@@ -1,0 +1,39 @@
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.day {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.date {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.appointment {
+    background-color: #3f51b5;
+    color: #fff;
+    padding: 5px;
+    margin-bottom: 5px;
+    cursor: move;
+}
